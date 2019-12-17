@@ -1,0 +1,23 @@
+[
+  {
+    "Id": 1,
+    "FirstName": "Bogdan",
+    "LastName": "Manole",
+    "Username": "bogd",
+    "DateOfBirth": "2015-06-14T21:00:00Z"
+  },
+  {
+    "Id": 2,
+    "FirstName": "Denisa",
+    "LastName": "Deusteanu",
+    "Username": "deni",
+    "DateOfBirth": "1996-09-09T00:00:00"
+  },
+  {
+    "Id": 0,
+    "FirstName": "Bogdan",
+    "LastName": "Manole",
+    "Username": "bog",
+    "DateOfBirth": "0001-01-01T00:00:00"
+  }
+]

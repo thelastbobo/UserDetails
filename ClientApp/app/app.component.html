@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>User Details</title>
+    
+</head>
+<body>
+    <div id="theForm" class="container-sm mb-5">
+        <div class="alert alert-danger" *ngIf="errorMsg">
+            {{ errorMsg }}
+        </div>
+        <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="form-group">
+                <label>First Name:</label>
+                <input name="first" required [(ngModel)]="userModel.firstName" #firstName="ngModel"
+                       [class.is-invalid]="firstName.invalid && firstName.touched" class="form-control" />
+                <small class="text-danger" [class.d-none]="firstName.valid || firstName.untouched">First Name is required</small>
+            </div>
+        <div class="form-group">
+            <label>Last Name:</label>
+            <input name="last" required [(ngModel)]="userModel.lastName" #lastName="ngModel"
+                   [class.is-invalid]="lastName.invalid && lastName.touched" class="form-control" />
+            <small class="text-danger" [class.d-none]="lastName.valid || lastName.untouched">Last Name is required</small>
+        </div>
+            <div class="form-group">
+                <label>Username:</label>
+                <input name="username" [(ngModel)]="userModel.username" #username="ngModel" [class.is-invalid]="username.invalid && username.touched" class="form-control" />
+                <small class="text-danger" *ngIf="username.errors?.forbiddenName">'{{username.errors?.forbiddenName.value}}' username not allowed</small>
+            </div>
+            <div class="form-group">
+                <label>Date of birth:</label>
+                <mat-form-field>
+                    <input name="dateOfBirth" class="form-control" [(ngModel)]="userModel.dateOfBirth" matInput [matDatepicker]="picker" placeholder="Choose a date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <br />
+            <button [disabled]="userForm.form.invalid">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
