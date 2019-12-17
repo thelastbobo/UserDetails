@@ -1,5 +1,5 @@
 # UserDetails
 
-Run npm install in the root folder 
-Open UserDetails.sln
-Run the application
+1.Run npm install in the root folder  
+2.Open UserDetails.sln  
+3.Run the application  
